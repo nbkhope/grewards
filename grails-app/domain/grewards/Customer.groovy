@@ -7,6 +7,8 @@ class Customer {
 	String email
 	Integer totalPoints
 
+	static hasMany = [awards: Award, orders: Order]
+
     static constraints = {
     }
 }
