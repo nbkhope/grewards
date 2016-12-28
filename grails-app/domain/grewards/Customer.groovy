@@ -14,9 +14,9 @@ class Customer {
     static constraints = {
     	// you can reorder the fields here
     	phone()
-    	firstName()
-    	lastName()
-    	email()
-    	totalPoints()
+    	firstName([nullable: true])
+    	lastName(nullable: true)
+    	email(nullable: true)
+    	totalPoints(nullable: true)
     }
 }
