@@ -1,5 +1,5 @@
 package grewards
 
 class OnlineOrderController {
-	static scaffold = Order
+	static scaffold = OnlineOrder
 }

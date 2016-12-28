@@ -9,7 +9,7 @@ class Customer {
 	String email
 	Integer totalPoints
 
-	static hasMany = [awards: Award, orders: Order]
+	static hasMany = [awards: Award, orders: OnlineOrder]
 
     static constraints = {
     	// you can reorder the fields here

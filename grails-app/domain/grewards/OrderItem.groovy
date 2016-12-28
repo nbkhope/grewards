@@ -4,7 +4,7 @@ class OrderItem {
 	Integer quantity
 	Float total
 
-	static belongsTo = [order: Order, product: Product]
+	static belongsTo = [order: OnlineOrder, product: Product]
 
     static constraints = {
     }
