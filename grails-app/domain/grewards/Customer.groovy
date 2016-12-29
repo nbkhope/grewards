@@ -16,7 +16,7 @@ class Customer {
     	phone()
     	firstName([nullable: true])
     	lastName(nullable: true)
-    	email(nullable: true)
-    	totalPoints(nullable: true)
+    	email(nullable: true, email: true) // for strings, you can limit size using maxSize: 255
+    	totalPoints(nullable: true, max: 10)
     }
 }

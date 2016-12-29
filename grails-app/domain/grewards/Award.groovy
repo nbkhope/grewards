@@ -8,5 +8,6 @@ class Award {
 	static belongsTo = [customer: Customer]
 
     static constraints = {
+    	type(inList: ["Purchase", "Reward"]) // you can only input these values for the type
     }
 }
