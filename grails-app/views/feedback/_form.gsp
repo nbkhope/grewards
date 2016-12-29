@@ -18,3 +18,19 @@
 	</label>
 	<g:passwordField name="password" value="${password}" />
 </div>
+
+<div class="fieldcontain">
+	<label for="notify">
+		Notify by Email?
+	</label>
+	<g:checkBox name="notify" value="${notify}" />
+</div>
+
+<div class="fieldcontain">
+	<label for="gender">
+		Gender
+	</label>
+	<g:radioGroup name="gender" labels="['Male', 'Female']" values="['M', 'F']" value="${gender}">
+		${it.label} ${it.radio}
+	</g:radioGroup>
+</div>
