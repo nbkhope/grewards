@@ -84,7 +84,7 @@ img {
 }
 
 .footer {
-    background: #48802c;
+    background: #503f22;
     color: #000;
     clear: both;
     font-size: 0.8em;
@@ -446,7 +446,7 @@ th.desc a {
 }
 
 th:hover, tr:hover {
-    background: #79b94c;
+    background: #C97F7F;
 }
 
 /* PAGINATION */
