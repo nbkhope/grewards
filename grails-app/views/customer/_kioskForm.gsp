@@ -15,13 +15,13 @@
 			<div class="row"><h3></h3></div>
 			<div class="row">
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="1" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="1" onclick="padkey(event)" />
 				</div>
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="2" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="2" onclick="padkey(event)" />
 				</div>
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="3" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="3" onclick="padkey(event)" />
 				</div>
 			</div>
 
@@ -29,26 +29,26 @@
 			<div class="row"><h3></h3></div>
 			<div class="row">
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="4" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="4" onclick="padkey(event)" />
 				</div>
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="5" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="5" onclick="padkey(event)" />
 				</div>
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="6" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="6" onclick="padkey(event)" />
 				</div>
 			</div>
 
 			<div class="row"><h3></h3></div>
 			<div class="row">
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="7" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="7" onclick="padkey(event)" />
 				</div>
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="8" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="8" onclick="padkey(event)" />
 				</div>
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="9" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="9" onclick="padkey(event)" />
 				</div>
 			</div>
 
@@ -58,13 +58,21 @@
 					<input type="button" class="btn btn-danger btn-lg btn-block" name="pad" value="Del" />
 				</div>
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="2" />
+					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="0" onclick="padkey(event)" />
 				</div>
 				<div class="col-sm-4">
 					<input type="button" class="btn btn-primary btn-lg btn-success" name="pad" value="GO" />
 				</div>
 			</div>
-			
+
 		</div><!-- .col-sm-6 -->
 	</div><!-- .row -->
 </div><!-- .container -->
+
+<script>
+function padkey(event) {
+	var phoneField = document.getElementById("phone");
+
+	phoneField.value += event.target.value;
+}
+</script> 
