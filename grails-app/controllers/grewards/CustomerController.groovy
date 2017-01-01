@@ -10,4 +10,9 @@ class CustomerController {
 	def checkin() {
 
 	}
+
+	def lookup() {
+		def customers = Customer.list()
+		[customerInstanceList: customers]
+	}
 }
