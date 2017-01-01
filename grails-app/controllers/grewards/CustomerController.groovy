@@ -12,7 +12,7 @@ class CustomerController {
 	}
 
 	def lookup() {
-		def customers = Customer.list()
+		def customers = Customer.list(sort: "lastName", order: "desc")
 		[customerInstanceList: customers]
 	}
 }
