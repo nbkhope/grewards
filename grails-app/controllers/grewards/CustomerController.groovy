@@ -12,7 +12,18 @@ class CustomerController {
 	}
 
 	def lookup() {
-		def customers = Customer.list(sort: "lastName", order: "desc")
+		// offset by maxRecords * pageNumber.
+		// e.g. given maxRecords per page = 5
+		// 		page 1: offset 0
+		//      page 2: offset 5
+		//      page 3: offset 10
+		//      etc.
+
+		// Set the offset given the page number
+		def theOffset = params.page ? (params.int("page") - 1) * 5 : 0
+		println "The offset is $theOffset"
+
+		def customers = Customer.list(sort: "lastName", order: "desc", max: 5, offset: theOffset)
 		[customerInstanceList: customers]
 	}
 }
