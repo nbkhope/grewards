@@ -32,7 +32,28 @@ class CustomerController {
 
 		// def customers = Customer.list(sort: "lastName", order: "desc", max: 5, offset: theOffset)
 
-		def customers = Customer.findByPhone(params.id)
+		// def customers = Customer.findByPhone(params.id)
+
+		/**
+		 * Dynamic finders
+		 */
+
+		// name starts with B (you Ilike for case insensitive (NOT ILike))
+		// def customers = Customer.findAllByLastNameLike("B%")
+
+		// points greater than 3
+		// GreaterThanEquals also works
+		// def customers = Customer.findAllByTotalPointsGreaterThan(3, [sort: "totalPoints", order: "desc"])
+
+		// Ranges (inclusive)
+		// def customers = Customer.findAllByTotalPointsBetween(2, 4, [sort: "totalPoints", order: "desc"])
+
+
+		// Combining search parameters
+		// def customers = Customer.findAllByFirstNameAndTotalPoints("Bo", 3)
+
+		// Combining even more (starts with B case insensitive and total pts >= 3)
+		def customers = Customer.findAllByFirstNameIlikeAndTotalPointsGreaterThanEquals("B%", 3)
 		[customerInstanceList: customers]
 	}
 }
