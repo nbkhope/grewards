@@ -56,4 +56,17 @@ class CustomerController {
 		def customers = Customer.findAllByFirstNameIlikeAndTotalPointsGreaterThanEquals("B%", 3)
 		[customerInstanceList: customers]
 	}
+
+	def index() {
+		// Number of items per page
+		params.max = 10
+
+		// Include params in list() so it deals with pagination
+		// *** The lines below don't work **
+		// [customerInstanceList: Customer.list(params), customerInstanceCount: Customer.count()]
+		// [customerInstanceList: Customer.list(), customerInstanceCount: Customer.count()]
+
+
+		respond Customer.list(params), model:[customerCount: Customer.count()]
+	}
 }
