@@ -23,7 +23,16 @@ class CustomerController {
 		def theOffset = params.page ? (params.int("page") - 1) * 5 : 0
 		println "The offset is $theOffset"
 
-		def customers = Customer.list(sort: "lastName", order: "desc", max: 5, offset: theOffset)
+		// findAllByLastName("Foster")
+		// findAllByTotalPoints(5, [sort: "lastName"])
+		// findAllByPhone(params.id, [sort: "lastName"])
+
+		// /lookup/:id
+		// /lookup?page=2
+
+		// def customers = Customer.list(sort: "lastName", order: "desc", max: 5, offset: theOffset)
+
+		def customers = Customer.findByPhone(params.id)
 		[customerInstanceList: customers]
 	}
 }
