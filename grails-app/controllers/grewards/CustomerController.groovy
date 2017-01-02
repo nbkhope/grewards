@@ -69,4 +69,12 @@ class CustomerController {
 
 		respond Customer.list(params), model:[customerCount: Customer.count()]
 	}
+
+	def create() {
+		// ** does not work in Grails 3 ?? **
+		// [customerInstance: new Customer()]
+
+		// code from static scaffolding is like this
+		respond new Customer(params)
+	}
 }
