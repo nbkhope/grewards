@@ -55,7 +55,8 @@
 			<div class="row"><h3></h3></div>
 			<div class="row">
 				<div class="col-sm-4">
-					<input type="button" class="btn btn-danger btn-lg btn-block" name="pad" value="Del" />
+					<input type="button" class="btn btn-danger btn-lg btn-block" name="pad" value="Del" onclick={clearPhoneNumber()} />
+					%{-- <g:link action="checkin" class="btn btn-danger btn-lg btn-block" >Del</g:link> --}%
 				</div>
 				<div class="col-sm-4">
 					<input type="button" class="btn btn-primary btn-lg btn-block" name="pad" value="0" onclick="padkey(event)" />
@@ -74,5 +75,9 @@ function padkey(event) {
 	var phoneField = document.getElementById("phone");
 
 	phoneField.value += event.target.value;
+}
+
+function clearPhoneNumber() {
+	document.getElementById("phone").value = "";
 }
 </script> 
