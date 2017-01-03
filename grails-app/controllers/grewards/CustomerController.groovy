@@ -77,4 +77,56 @@ class CustomerController {
 		// code from static scaffolding is like this
 		respond new Customer(params)
 	}
+
+	def save(Customer customerInstance) {
+		customerInstance.save()
+		redirect action: "show", id: customerInstance.id
+	}
+
+	// does not work in Grails 3.2.4:
+	// def show(Long id) {
+	// 	def customerInstance = Customer.get(id)
+	// 	[customerInstance: customerInstance]
+	// }
+
+	def show(Customer customer) {
+		
+		respond customer
+	}
+
+	// does not work in Grails 3.2.4:
+	// def edit(Long id) {
+	// 	def customerInstance = Customer.get(id)
+	// 	println customerInstance
+
+	// 	[customerInstance: customerInstance]
+	// }
+
+	def edit(Customer customer) {
+		respond customer
+	}
+
+	def update(Long id) {
+		println "Update: id is $id"
+		def customerInstance = Customer.get(id)
+		println customerInstance.properties
+
+		customerInstance.properties = params
+		println customerInstance.properties
+
+		// need to pass flush: true !
+		customerInstance.save(flush: true)
+
+		redirect action: "show", id: customerInstance.id
+	}
+
+	def delete(Long id) {
+		def customerInstance = Customer.get(id)
+
+		// need to flush!
+		customerInstance.delete flush: true
+
+		redirect action: "index"
+	}
+
 }
