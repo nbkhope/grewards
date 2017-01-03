@@ -13,4 +13,13 @@ class CalculationsService {
 
     	return "Welcome back, $firstName. You've got ${points} points."
     }
+
+    def getTotalPoints(customerInstance) {
+    	def totalAwards = 0
+
+    	customerInstance.awards.each { totalAwards += it.points }
+
+    	customerInstance.totalPoints = totalAwards
+    	return customerInstance
+    }
 }

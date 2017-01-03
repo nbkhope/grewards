@@ -5,6 +5,8 @@ class CustomerController {
 	// in Grails 3, you need to give the domain class instead of just "true"
 	static scaffold = Customer
 
+	def calculationsService
+
 	// Just by having this empty action will 
 	// cause the corresponding view to be rendered
 	def checkin() {
@@ -90,7 +92,7 @@ class CustomerController {
 	// }
 
 	def show(Customer customer) {
-		
+		def customerInstance = calculationsService.getTotalPoints(customer)
 		respond customer
 	}
 
