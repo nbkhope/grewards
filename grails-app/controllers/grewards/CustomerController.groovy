@@ -131,4 +131,8 @@ class CustomerController {
 		redirect action: "index"
 	}
 
+	def customerLookup() {
+		
+	}
+
 }
